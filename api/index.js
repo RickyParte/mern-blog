@@ -11,7 +11,7 @@ import path from 'path';
 dotenv.config();
 
 mongoose
-  .connect(process.env.MONGO)
+  .connect('mongodb+srv://sanketwalhekar83:9665998329@cluster0.sevwc.mongodb.net/blog')
   .then(() => {
     console.log('MongoDb is connected');
   })
@@ -26,8 +26,8 @@ const app = express();
 app.use(express.json());
 app.use(cookieParser());
 
-app.listen(3000, () => {
-  console.log('Server is running on port 3000!');
+app.listen(9000, () => {
+  console.log('Server is running on port 9000!');
 });
 
 app.use('/api/user', userRoutes);
